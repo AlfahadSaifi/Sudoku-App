@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './screens/sudoku_grid_screen.dart';
+import 'package:sudoku/screens/splash_screen.dart';
 
 void main() {
   runApp(const SudokuApp());
@@ -14,7 +14,7 @@ class SudokuApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sudoku App',
       theme: ThemeData.dark(),
-      home: const SudokuGridScreen(),
+      home: const SplashScreen(),
     );
   }
 }
