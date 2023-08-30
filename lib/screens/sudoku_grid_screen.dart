@@ -15,7 +15,7 @@ class SudokuGridScreen extends StatefulWidget {
 }
 
 class SudokuGridScreenState extends State<SudokuGridScreen> {
-  //object for sudoku solver
+  //Object for sudoku solver
   final SudokuGenerator _generator = SudokuGenerator();
   final SudokuSolver _solver = SudokuSolver();
 
@@ -83,9 +83,9 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
       context: context,
       builder: (BuildContext context) {
         return MultiScreen(
-          onAction: _startNewGame, // Replace with your restart function
-          message: 'Out of Time',
-          buttonLabel: 'Start New Game',
+          onAction: _startNewGame,
+          message: "Out of Time",
+          buttonLabel: "Start New Game",
         );
       },
     );
@@ -94,6 +94,7 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF92EFFD),
       appBar: AppBar(
         title: const Center(child: Text('Sudoku')),
         actions: [
@@ -113,9 +114,9 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
                           isPaused = !isPaused;
                         });
                         Navigator.of(context).pop();
-                      }, // Replace with your restart function
-                      message: 'Game Paused',
-                      buttonLabel: 'resume',
+                      },
+                      message: "Game paused",
+                      buttonLabel: "Resume",
                     );
                   },
                 );
@@ -203,11 +204,10 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
                                           context: context,
                                           builder: (BuildContext context) {
                                             return MultiScreen(
-                                              onAction:
-                                                  _startNewGame, // Replace with your restart function
+                                              onAction: _startNewGame,
                                               message:
-                                                  'Congratulations You Win',
-                                              buttonLabel: 'Play Again',
+                                                  "Congratulations You Win",
+                                              buttonLabel: "Play Again",
                                             );
                                           },
                                         );
@@ -230,7 +230,7 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
                             right: rightBorder,
                           ),
                           color: isInitialValue
-                              ? Colors.grey
+                              ? const Color(0xFF92EFFD)
                               : isConflicting
                                   ? Colors.red
                                   : Colors.white,
