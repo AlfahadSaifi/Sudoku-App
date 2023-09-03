@@ -13,7 +13,7 @@ class SudokuApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sudoku App',
-      theme: ThemeData.light().copyWith(primaryColor: const Color(0xFF92EFFD)),
+      theme: ThemeData.dark(),
       home: const SplashScreen(),
     );
   }

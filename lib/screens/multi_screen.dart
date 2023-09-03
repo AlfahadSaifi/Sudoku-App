@@ -34,13 +34,21 @@ class MultiScreen extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.amberAccent,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 50),
               ElevatedButton(
                 onPressed: onAction,
-                child: Text(buttonLabel),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                      ThemeData.dark().scaffoldBackgroundColor),
+                ),
+                child: Text(
+                  buttonLabel,
+                  style:
+                      const TextStyle(color: Colors.amberAccent, fontSize: 18),
+                ),
               ),
             ],
           ),

@@ -94,13 +94,19 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF92EFFD),
       appBar: AppBar(
-        title: const Center(child: Text('Sudoku')),
+        title: const Center(
+            child: Text(
+          'Sudoku',
+          style: TextStyle(color: Colors.white70),
+        )),
         actions: [
           if (!isPaused && secondsElapsed > 0)
             IconButton(
-              icon: const Icon(Icons.pause),
+              icon: const Icon(
+                Icons.pause,
+                color: Colors.white30,
+              ),
               onPressed: () {
                 setState(() {
                   isPaused = !isPaused;
@@ -230,10 +236,10 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
                             right: rightBorder,
                           ),
                           color: isInitialValue
-                              ? const Color(0xFF92EFFD)
+                              ? const Color(0xFF3D3C3A)
                               : isConflicting
                                   ? Colors.red
-                                  : Colors.white,
+                                  : const Color(0xff696969),
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -241,8 +247,8 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
                           style: TextStyle(
                             fontSize: 20,
                             color: _initialValues[row][col] != 0
-                                ? Colors.black
-                                : Colors.blue,
+                                ? Colors.amberAccent
+                                : Colors.white,
                           ),
                         ),
                       ),
@@ -253,8 +259,9 @@ class SudokuGridScreenState extends State<SudokuGridScreen> {
               ),
               Center(
                 child: Text(
-                  formatTimer(secondsElapsed),
-                  style: const TextStyle(fontSize: 25),
+                  "Time Remaining: ${formatTimer(secondsElapsed)}",
+                  style:
+                      const TextStyle(fontSize: 25, color: Colors.amberAccent),
                 ),
               ),
             ],
